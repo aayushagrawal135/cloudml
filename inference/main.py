@@ -4,7 +4,6 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
-import numpy
 from PIL import Image
 
 app = Flask(__name__)
@@ -78,5 +77,4 @@ def get_result():
     return json.dumps(res)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+app.run(host='0.0.0.0')
