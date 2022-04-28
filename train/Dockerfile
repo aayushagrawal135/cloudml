@@ -1,10 +1,12 @@
-FROM python:3.8
+FROM pytorch/pytorch
 
-WORKDIR /project
+# WORKDIR /project
 
 COPY main.py .
-COPY requirements.txt .
+# COPY requirements.txt .
 
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
 
-# CMD [ "python", "./main.py" ]
+# ENTRYPOINT [ "python" ]
+
+CMD python3 main.py

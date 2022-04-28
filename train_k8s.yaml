@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: train
+spec:
+  template:
+    spec:
+      containers:
+      - name: train
+        image: aka7919/train
+        command: ["python3", "main.py"]
+        volumeMounts:
+        - name: model
+          mountPath: /mnt
+      restartPolicy: Never
+      volumes:
+        - name: model
+          persistentVolumeClaim:
+            claimName: kctl-vpc2

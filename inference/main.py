@@ -49,7 +49,7 @@ def preprocess(image):
 
 def infer(image):
     model = Net()
-    model.load_state_dict(torch.load('../mnt/model.pt'))
+    model.load_state_dict(torch.load('/mnt/model.pth'))
     model.eval()
     output = model(image)
     result = output.squeeze().argmax().item()
